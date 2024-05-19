@@ -15,6 +15,6 @@ output_file=$3
 
 
 # use FFmpeg to convert the image and mp3 file to a video file
-ffmpeg -loop 1 -i $image_file -i $mp3_file -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest $output_file
+ffmpeg -y -loop 1 -i $image_file -i $mp3_file -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest -r 1 $output_file
 
 # Example usage: ./scripts/image_mp3.sh ./data/images/1.webp  ./data/mp3/3.mp3 ./output/may1.mp4
